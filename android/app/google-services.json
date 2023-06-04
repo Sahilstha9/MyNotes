@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "47056386037",
+    "project_id": "mynotes-try-for-sahil",
+    "storage_bucket": "mynotes-try-for-sahil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47056386037:android:5acfae5fee88da8079d2bc",
+        "android_client_info": {
+          "package_name": "sh.sahil.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47056386037-oo8mcnjtgeikuco40r354pb82pr3do4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEmaChkL154XINgK9Sgr2DBP2Lo_P6DI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47056386037-oo8mcnjtgeikuco40r354pb82pr3do4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
