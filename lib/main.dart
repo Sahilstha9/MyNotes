@@ -5,7 +5,6 @@ import 'package:mynotes/views/login_view.dart';
 import 'package:mynotes/views/notes_view.dart';
 import 'package:mynotes/views/register_view.dart';
 import 'package:mynotes/views/verify_email.dart';
-import 'dart:developer' show log;
 
 import 'firebase_options.dart';
 
@@ -22,6 +21,7 @@ void main() {
       '/login/': (context) => const LoginView(),
       '/register/': (context) => const RegisterView(),
       '/verifyEmail/': (context) => const VerifyEmailView(),
+      '/notes/': (context) => const NotesView(),
     },
   ));
 }
