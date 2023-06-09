@@ -36,6 +36,7 @@ class _NewNoteViewState extends State<NewNoteView> {
       return;
     }
     final text = _textController.text;
+
     await _notesService.updateNote(note: note, text: text);
   }
 
@@ -68,6 +69,7 @@ class _NewNoteViewState extends State<NewNoteView> {
     final text = _textController.text;
 
     if (note != null && text.isNotEmpty) {
+      print(note.id);
       await _notesService.updateNote(note: note, text: text);
     }
   }
