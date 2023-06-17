@@ -7,11 +7,15 @@ import 'package:mynotes/services/crud/crud_exceptions.dart';
 class FirebaseCloudStorage {
   final notes = FirebaseFirestore.instance.collection('notes');
 
-  void createNewNotes({required String ownerUserId}) async {
-    await notes.add({
+  Future<CloudNote> createNewNotes({required String ownerUserId}) async {
+    final document = await notes.add({
       ownerUserIdFieldName: ownerUserId,
       textFieldName: '',
     });
+    final fetchedNote = await document.get();
+
+    return CloudNote(
+        documentId: fetchedNote.id, ownerUserId: ownerUserId, text: '');
   }
 
   Future<Iterable<CloudNote>> getNotes({required String ownerUserId}) async {
@@ -22,12 +26,8 @@ class FirebaseCloudStorage {
             isEqualTo: ownerUserId,
           )
           .get()
-          .then((value) => value.docs.map((doc) {
-                return CloudNote(
-                    documentId: doc.id,
-                    ownerUserId: doc.data()[ownerUserIdFieldName],
-                    text: doc.data()[textFieldName]);
-              }));
+          .then(
+              (value) => value.docs.map((doc) => CloudNote.fromSnapshot(doc)));
     } catch (e) {
       throw CouldNoteGetAllNotesException();
     }
